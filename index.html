@@ -1,196 +1,830 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>খিদমাতুল উম্মাহ ফাউন্ডেশন</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
-        header { background-color: #1b5e20; color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h2 { color: #1b5e20; border-bottom: 2px solid #1b5e20; padding-bottom: 8px; margin-top: 30px; margin-bottom: 20px; }
-        
-        /* ডোনেশন সেকশন */
-        .donation-box { text-align: center; background: #efebe9; padding: 25px; border-radius: 8px; border-left: 5px solid #d81b60; }
-        .bkash-btn { display: inline-block; background-color: #d81b60; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 30px; margin-top: 15px; transition: 0.3s; box-shadow: 0 4px 10px rgba(216,27,96,0.3); }
-        .bkash-btn:hover { background-color: #ad1457; transform: translateY(-2px); }
-        
-        /* সদস্য ফরম */
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
-        .submit-btn { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; font-size: 18px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }
-        .submit-btn:hover { background-color: #2e7d32; }
-        
-        /* ফেসবুক এবং সোশ্যাল সেকশন */
-        .fb-box { text-align: center; background: #e8f0fe; padding: 20px; border-radius: 8px; }
-        .fb-btn { display: inline-block; background-color: #1877f2; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
-        .fb-btn:hover { background-color: #166fe5; }
-        
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>খিদমাতুল উম্মাহ ফাউন্ডেশন</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI","Noto Sans Bengali",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f8f6;
+    color:#26332e;
+    line-height:1.7;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    background:linear-gradient(135deg,#064d38,#0b7654);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.logo-circle{
+    width:85px;
+    height:85px;
+    margin:0 auto 20px;
+    border:3px solid #e2c45d;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:38px;
+}
+
+header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+    opacity:.95;
+}
+
+.established{
+    display:inline-block;
+    margin-top:18px;
+    padding:6px 20px;
+    border:1px solid #e2c45d;
+    border-radius:30px;
+    color:#f1d875;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+    background:#043d2d;
+    text-align:center;
+    padding:14px 10px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e4c65e;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:25px 18px;
+}
+
+section{
+    background:white;
+    margin:25px 0;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.section-title h2{
+    color:#075c42;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.line{
+    width:65px;
+    height:3px;
+    background:#d4b44e;
+    margin:auto;
+}
+
+/* ===== ABOUT ===== */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.about-card{
+    background:#f5faf7;
+    padding:25px;
+    border-radius:14px;
+    border-left:4px solid #087653;
+}
+
+.about-card h3{
+    color:#075c42;
+    margin-bottom:10px;
+}
+
+/* ===== ACTIVITIES ===== */
+
+.activities{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.activity{
+    text-align:center;
+    padding:25px 15px;
+    background:#f7faf8;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.activity:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.activity h3{
+    color:#075c42;
+}
+
+/* ===== COMMITTEE ===== */
+
+.team{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.member{
+    padding:20px;
+    text-align:center;
+    border:1px solid #e5ebe8;
+    border-radius:13px;
+    background:#fbfdfc;
+}
+
+.role{
+    color:#a47c13;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.member h3{
+    color:#075c42;
+    margin-top:3px;
+}
+
+/* ===== DONATION ===== */
+
+.donation-section{
+    background:linear-gradient(135deg,#075c42,#0b7654);
+    color:white;
+}
+
+.donation-section .section-title h2{
+    color:white;
+}
+
+.donation-box{
+    max-width:650px;
+    margin:auto;
+    text-align:center;
+    background:white;
+    color:#333;
+    padding:35px 25px;
+    border-radius:20px;
+}
+
+.donation-box h3{
+    color:#d81b60;
+    font-size:24px;
+}
+
+.bkash-number{
+    color:#d81b60;
+    font-size:30px;
+    font-weight:bold;
+    margin:15px 0;
+    letter-spacing:1px;
+}
+
+.copy-btn{
+    border:none;
+    background:#075c42;
+    color:white;
+    padding:10px 22px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.bkash-btn{
+    display:block;
+    background:#d81b60;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    border-radius:30px;
+    margin-top:18px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.bkash-btn:hover{
+    background:#ad1457;
+    transform:translateY(-2px);
+}
+
+.note{
+    font-size:13px;
+    color:#777;
+    margin-top:12px;
+}
+
+/* ===== FORM ===== */
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccd5d1;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#087653;
+}
+
+.submit-btn{
+    width:100%;
+    padding:14px;
+    background:#075c42;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#0b7654;
+}
+
+/* ===== FACEBOOK ===== */
+
+.facebook-box{
+    text-align:center;
+    background:#eef5ff;
+    padding:30px;
+    border-radius:15px;
+}
+
+.fb-btn{
+    display:inline-block;
+    margin-top:15px;
+    background:#1877f2;
+    color:white;
+    padding:13px 28px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.fb-btn:hover{
+    background:#0d65d9;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-box{
+    text-align:center;
+    background:#f6faf8;
+    padding:25px;
+    border-radius:14px;
+}
+
+.contact-box h3{
+    color:#075c42;
+    margin-bottom:5px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#043d2d;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:30px;
+}
+
+footer span{
+    color:#e2c45d;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+    header{
+        padding:50px 15px;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    nav{
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    nav a{
+        font-size:13px;
+        margin:0 6px;
+    }
+
+    section{
+        padding:25px 18px;
+    }
+
+    .about-grid,
+    .activities,
+    .team,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bkash-number{
+        font-size:24px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>খিদমাতুল উম্মাহ ফাউন্ডেশন</h1>
-        <p>মানবতার সেবায় নিয়োজিত একটি অলাভজনক ও স্বেচ্ছাসেবী সংগঠন</p>
-    </header>
 
-    <div class="container">
-        <!-- সভাপতি ও পরিচিতি সেকশন (আপনার আগের তথ্য এখানে থাকবে) -->
-        <h2>ফাউন্ডেশন পরিচিতি</h2>
-        <p><strong>সভাপতি:</strong> [এখানে সভাপতির নাম লিখুন]</p>
-        <p>আমাদের ফাউন্ডেশন সমাজের সুবিধাবঞ্চিত ও অসহায় মানুষের পাশে দাঁড়াতে নিরলস কাজ করে যাচ্ছে।</p>
+<!-- ===== HEADER ===== -->
 
-        <!-- ডোনেশন সেকশন (সরাসরি বিকাশ) -->
-        <h2>সরাসরি ডোনেশন করুন</h2>
-        <div class="donation-box">
-            <p>আপনার দেওয়া অনুদান পৌঁছে যাবে অসহায় মানুষের কাছে। সরাসরি বিকাশ পার্সোনাল নাম্বারে ডোনেশন করতে নিচের বাটনে ক্লিক করুন।</p>
-            <!-- নিচের লিংকে আপনার নিজের বিকাশ পার্সোনাল নাম্বার এবং টাকার পরিমাণ বসাতে পারেন -->
-            <a href="https://bkash.com" target="_blank" class="bkash-btn">৳ সরাসরি বিকাশে ডোনেট করুন</a>
-            <p style="margin-top: 10px; font-size: 14px; color: #666;">(নোট: বিকাশ অ্যাপ ইনস্টল করা থাকলে সরাসরি পেমেন্ট স্ক্রিনে নিয়ে যাবে)</p>
-        </div>
+<header id="home">
 
-        <!-- সদস্য ফরম সেকশন -->
-        <h2>সদস্য নিবন্ধন ফরম</h2>
-        <form action="https://formspree.io" method="POST">
-            <div class="form-group">
-                <label for="name">আপনার নাম:</label>
-                <input type="text" id="name" name="name" required placeholder="সম্পূর্ণ নাম লিখুন">
-            </div>
-            <div class="form-group">
-                <label for="phone">মোবাইল নাম্বার:</label>
-                <input type="tel" id="phone" name="phone" required placeholder="বিকাশ/যোগাযোগের নাম্বার">
-            </div>
-            <div class="form-group">
-                <label for="address">বর্তমান ঠিকানা:</label>
-                <textarea id="address" name="address" rows="3" required placeholder="আপনার ঠিকানা লিখুন"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">সদস্য পদের জন্য আবেদন করুন</button>
-        </form>
-
-        <!-- ফেসবুক পেজ সেকশন -->
-        <h2>আমাদের ফেসবুক পেজ</h2>
-        <div class="fb-box">
-            <p>আমাদের সব সর্বশেষ কার্যক্রম এবং আপডেট জানতে অফিসিয়াল ফেসবুক পেজে যুক্ত থাকুন।</p>
-            <!-- নিচের লিংকে আপনার ফেসবুক পেজের আসল লিংকটি বসিয়ে দিন -->
-            <a href="https://facebook.com" target="_blank" class="fb-btn">ফাউন্ডেশনের ফেসবুক পেজ ভিজিট করুন</a>
-        </div>
+    <div class="logo-circle">
+        🕌
     </div>
 
-    <footer>
-        <p>&copy; 2026 খিদমাতুল উম্মাহ ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
+    <h1>খিদমাতুল উম্মাহ ফাউন্ডেশন</h1>
 
-</body>
-</html>
+    <p>
+        মানবতার সেবায় নিয়োজিত একটি অলাভজনক ও স্বেচ্ছাসেবী সংগঠন
+    </p>
 
-    .    </
-    <div class="title">
-      <h2>পরিচালনা কমিটি</h2>
-      <div></div>
+    <div class="established">
+        Established 2026
+    </div>
+
+</header>
+
+
+<!-- ===== NAVIGATION ===== -->
+
+<nav>
+
+    <a href="#home">হোম</a>
+    <a href="#about">আমাদের সম্পর্কে</a>
+    <a href="#activities">কার্যক্রম</a>
+    <a href="#team">কমিটি</a>
+    <a href="#donation">ডোনেশন</a>
+    <a href="#member">সদস্য</a>
+    <a href="#contact">যোগাযোগ</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- ===== ABOUT ===== -->
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>ফাউন্ডেশন পরিচিতি</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h3>🤝 আমাদের সম্পর্কে</h3>
+
+            <p>
+                খিদমাতুল উম্মাহ ফাউন্ডেশন একটি মানবিক ও সেবামূলক
+                সংগঠন। আমাদের লক্ষ্য সমাজের অসহায়, দরিদ্র ও
+                সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানো।
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>🎯 আমাদের লক্ষ্য</h3>
+
+            <p>
+                মানবকল্যাণে কাজ করা, অসহায় মানুষের সহযোগিতা করা
+                এবং সমাজে সহানুভূতি ও সহযোগিতার মনোভাব গড়ে তোলা।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ACTIVITIES ===== -->
+
+<section id="activities">
+
+    <div class="section-title">
+        <h2>আমাদের কার্যক্রম</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="activities">
+
+        <div class="activity">
+            <div class="icon">🤝</div>
+            <h3>মানবিক সহায়তা</h3>
+            <p>অসহায় ও দরিদ্র মানুষের পাশে দাঁড়ানো।</p>
+        </div>
+
+        <div class="activity">
+            <div class="icon">📚</div>
+            <h3>শিক্ষা সহায়তা</h3>
+            <p>সুবিধাবঞ্চিত শিক্ষার্থীদের সহযোগিতা করা।</p>
+        </div>
+
+        <div class="activity">
+            <div class="icon">🏥</div>
+            <h3>চিকিৎসা সহায়তা</h3>
+            <p>প্রয়োজনীয় চিকিৎসা সহায়তা প্রদান।</p>
+        </div>
+
+        <div class="activity">
+            <div class="icon">🍚</div>
+            <h3>খাদ্য বিতরণ</h3>
+            <p>অসহায় মানুষের মাঝে খাদ্য ও প্রয়োজনীয় সামগ্রী বিতরণ।</p>
+        </div>
+
+        <div class="activity">
+            <div class="icon">🌧️</div>
+            <h3>দুর্যোগ সহায়তা</h3>
+            <p>দুর্যোগে ক্ষতিগ্রস্ত মানুষের পাশে দাঁড়ানো।</p>
+        </div>
+
+        <div class="activity">
+            <div class="icon">🌱</div>
+            <h3>সামাজিক কার্যক্রম</h3>
+            <p>সমাজের কল্যাণে বিভিন্ন উদ্যোগ গ্রহণ।</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== COMMITTEE ===== -->
+
+<section id="team">
+
+    <div class="section-title">
+        <h2>পরিচালনা কমিটি</h2>
+        <div class="line"></div>
     </div>
 
     <div class="team">
 
-      <div class="member">
-        <div class="role">প্রতিষ্ঠাতা</div>
-        <h3>মোঃ শাকিল মাহমুদ</h3>
-      </div>
+        <div class="member">
+            <div class="role">প্রতিষ্ঠাতা</div>
+            <h3>মোঃ শাকিল মাহমুদ</h3>
+        </div>
 
-      <div class="member">
-        <div class="role">প্রতিষ্ঠাতা</div>
-        <h3>মোঃ রাকিবুল ইসলাম</h3>
-      </div>
+        <div class="member">
+            <div class="role">প্রতিষ্ঠাতা</div>
+            <h3>মোঃ রাকিবুল ইসলাম</h3>
+        </div>
 
-      <div class="member">
-        <div class="role">সভাপতি</div>
-        <h3>এইচ এম আরমান আলী খান</h3>
-      </div>
+        <div class="member">
+            <div class="role">সভাপতি</div>
+            <h3>এইচ এম আরমান আলী খান</h3>
+        </div>
 
-      <div class="member">
-        <div class="role">সহ-সভাপতি</div>
-        <h3>মুসলিম উদ্দিন</h3>
-      </div>
+        <div class="member">
+            <div class="role">সহ-সভাপতি</div>
+            <h3>মুসলিম উদ্দিন</h3>
+        </div>
 
-      <div class="member">
-        <div class="role">সাধারণ সম্পাদক</div>
-        <h3>শাকিল মাহমুদ</h3>
-      </div>
+        <div class="member">
+            <div class="role">সাধারণ সম্পাদক</div>
+            <h3>শাকিল মাহমুদ</h3>
+        </div>
 
-      <div class="member">
-        <div class="role">সাংগঠনিক সম্পাদক</div>
-        <h3>রাকিবুল ইসলাম</h3>
-      </div>
+        <div class="member">
+            <div class="role">সাংগঠনিক সম্পাদক</div>
+            <h3>রাকিবুল ইসলাম</h3>
+        </div>
 
     </div>
-  </div>
+
 </section>
 
-<section class="donation" id="donation">
 
-  <div class="container">
+<!-- ===== DONATION ===== -->
 
-    <div class="title">
-      <h2>ডোনেশন করুন</h2>
-      <div></div>
+<section id="donation" class="donation-section">
+
+    <div class="section-title">
+        <h2>সরাসরি ডোনেশন করুন</h2>
+        <div class="line"></div>
     </div>
 
-    <div class="donate-box">
 
-      <h3>বিকাশের মাধ্যমে সহযোগিতা করুন</h3>
+    <div class="donation-box">
 
-      <div class="number">
-        +880 1882-751524
-      </div>
+        <h3>💗 মানবতার সেবায় সহযোগিতা করুন</h3>
 
-      <p>
-        আপনার সামান্য সহযোগিতাও একজন অসহায় মানুষের
-        জীবনে বড় পরিবর্তন আনতে পারে।
-      </p>
+        <p>
+            আপনার সামান্য সহযোগিতাও একজন অসহায় মানুষের
+            জীবনে বড় পরিবর্তন আনতে পারে।
+        </p>
+
+        <div class="bkash-number" id="bkashNumber">
+            01882751524
+        </div>
+
+        <button class="copy-btn" onclick="copyNumber()">
+            📋 বিকাশ নম্বর কপি করুন
+        </button>
+
+        <a
+            href="https://bkash.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bkash-btn">
+            💳 বিকাশে ডোনেশন করতে যান
+        </a>
+
+        <p class="note">
+            বিকাশ নম্বর: 01882751524
+            <br>
+            বাটনে ক্লিক করে bKash থেকে এই নম্বরে Send Money করুন।
+        </p>
 
     </div>
-
-  </div>
 
 </section>
+
+
+<!-- ===== MEMBER FORM ===== -->
+
+<section id="member">
+
+    <div class="section-title">
+        <h2>সদস্য নিবন্ধন ফরম</h2>
+        <div class="line"></div>
+    </div>
+
+    <form>
+
+        <div class="form-group">
+
+            <label for="name">
+                আপনার নাম
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="সম্পূর্ণ নাম লিখুন">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="phone">
+                মোবাইল নাম্বার
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="আপনার মোবাইল নাম্বার">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="address">
+                বর্তমান ঠিকানা
+            </label>
+
+            <textarea
+                id="address"
+                name="address"
+                rows="4"
+                required
+                placeholder="আপনার বর্তমান ঠিকানা লিখুন">
+            </textarea>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="submit-btn"
+            onclick="alert('আপনার আবেদন গ্রহণের জন্য ফর্মটি সংযুক্ত করতে হবে।')">
+
+            📝 সদস্য পদের জন্য আবেদন করুন
+
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ===== FACEBOOK ===== -->
+
+<section>
+
+    <div class="section-title">
+        <h2>আমাদের ফেসবুক পেজ</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="facebook-box">
+
+        <p>
+            আমাদের সর্বশেষ কার্যক্রম ও আপডেট জানতে
+            অফিসিয়াল ফেসবুক পেজে যুক্ত থাকুন।
+        </p>
+
+        <a
+            href="https://www.facebook.com/khidmatul.ummah24"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fb-btn">
+
+            👍 ফেসবুক পেজ ভিজিট করুন
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===== CONTACT ===== -->
 
 <section id="contact">
 
-  <div class="container">
-
-    <div class="title">
-      <h2>যোগাযোগ</h2>
-      <div></div>
+    <div class="section-title">
+        <h2>যোগাযোগ</h2>
+        <div class="line"></div>
     </div>
 
-    <div class="contact">
 
-      <div class="contact-box">
-        <h3>📞 ফোন</h3>
-        <p>+880 1882-751524</p>
-      </div>
+    <div class="contact-grid">
 
-      <div class="contact-box">
-        <h3>📍 ঠিকানা</h3>
-        <p>মৌলভীবাজার, পার্বতীপুর, দিনাজপুর</p>
-      </div>
+        <div class="contact-box">
+
+            <h3>📞 ফোন</h3>
+
+            <p>
+                <a
+                    href="tel:+8801882751524"
+                    style="color:#075c42;text-decoration:none;font-weight:bold;">
+                    +880 1882-751524
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>📍 ঠিকানা</h3>
+
+            <p>
+                মৌলভীবাজার, পার্বতীপুর, দিনাজপুর
+            </p>
+
+        </div>
 
     </div>
-
-  </div>
 
 </section>
 
+</div>
+
+
+<!-- ===== FOOTER ===== -->
+
 <footer>
-  <p>
-    © 2026 <span>খিদমাতুল উম্মাহ ফাউন্ডেশন</span> —
-    All Rights Reserved.
-  </p>
+
+    <p>
+        © 2026
+        <span>খিদমাতুল উম্মাহ ফাউন্ডেশন</span>
+    </p>
+
+    <p>
+        মানবতার সেবায় আমরা
+    </p>
+
 </footer>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+
+function copyNumber(){
+
+    const number = "01882751524";
+
+    navigator.clipboard.writeText(number)
+    .then(function(){
+
+        alert("✅ বিকাশ নম্বর কপি হয়েছে!");
+
+    })
+    .catch(function(){
+
+        alert("বিকাশ নম্বর: " + number);
+
+    });
+
+}
+
+</script>
 
 </body>
 </html>

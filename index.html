@@ -1,397 +1,94 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>খিদমাতুল উম্মাহ ফাউন্ডেশন</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,"Noto Sans Bengali",sans-serif;
-    }
-
-    html{scroll-behavior:smooth;}
-
-    body{
-      background:#f5faf7;
-      color:#17352a;
-      line-height:1.7;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:#075c42;
-      box-shadow:0 3px 15px rgba(0,0,0,.15);
-    }
-
-    .nav{
-      max-width:1150px;
-      margin:auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo{
-      color:white;
-      font-size:22px;
-      font-weight:bold;
-    }
-
-    .logo span{color:#d7b45a;}
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      font-size:15px;
-    }
-
-    nav a:hover{color:#e4c66d;}
-
-    .hero{
-      min-height:650px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:70px 20px;
-      background:
-        linear-gradient(rgba(0,75,52,.82),rgba(0,75,52,.88)),
-        radial-gradient(circle at top,#22966f,#064b36);
-      color:white;
-    }
-
-    .hero-content{max-width:850px;}
-
-    .badge{
-      display:inline-block;
-      padding:7px 18px;
-      border:1px solid #d8b85b;
-      border-radius:30px;
-      color:#f2d477;
-      margin-bottom:20px;
-    }
-
-    h1{
-      font-size:48px;
-      margin-bottom:15px;
-    }
-
-    .hero p{
-      font-size:19px;
-      opacity:.95;
-      margin-bottom:30px;
-    }
-
-    .btn{
-      display:inline-block;
-      background:#d6b34e;
-      color:#17352a;
-      padding:12px 28px;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:bold;
-      margin:5px;
-      transition:.3s;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-      background:#f0d273;
-    }
-
-    .btn-outline{
-      background:transparent;
-      border:1px solid white;
-      color:white;
-    }
-
-    section{
-      padding:75px 20px;
-    }
-
-    .container{
-      max-width:1100px;
-      margin:auto;
-    }
-
-    .title{
-      text-align:center;
-      margin-bottom:45px;
-    }
-
-    .title h2{
-      font-size:34px;
-      color:#075c42;
-      margin-bottom:8px;
-    }
-
-    .title div{
-      width:60px;
-      height:3px;
-      background:#d5b44f;
-      margin:auto;
-    }
-
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:35px;
-      align-items:center;
-    }
-
-    .card{
-      background:white;
-      padding:30px;
-      border-radius:18px;
-      box-shadow:0 5px 25px rgba(0,0,0,.07);
-    }
-
-    .card h3{
-      color:#075c42;
-      margin-bottom:12px;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .activity{
-      text-align:center;
-      padding:30px 20px;
-    }
-
-    .icon{
-      width:65px;
-      height:65px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin:0 auto 18px;
-      border-radius:50%;
-      background:#e3f3ec;
-      font-size:30px;
-    }
-
-    .team{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-    }
-
-    .member{
-      background:white;
-      border-radius:15px;
-      padding:22px;
-      text-align:center;
-      box-shadow:0 5px 20px rgba(0,0,0,.06);
-    }
-
-    .member h3{
-      color:#075c42;
-      margin-bottom:5px;
-    }
-
-    .role{
-      color:#a27c17;
-      font-weight:bold;
-    }
-
-    .donation{
-      background:#075c42;
-      color:white;
-      text-align:center;
-    }
-
-    .donation .title h2{color:white;}
-
-    .donate-box{
-      max-width:650px;
-      margin:auto;
-      background:rgba(255,255,255,.08);
-      padding:35px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.2);
-    }
-
-    .number{
-      font-size:25px;
-      color:#f0d273;
-      font-weight:bold;
-      margin:15px 0;
-    }
-
-    .contact{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:20px;
-    }
-
-    .contact-box{
-      background:white;
-      padding:25px;
-      border-radius:15px;
-      box-shadow:0 5px 20px rgba(0,0,0,.06);
-    }
-
-    footer{
-      background:#043d2d;
-      color:white;
-      text-align:center;
-      padding:30px 15px;
-    }
-
-    footer span{color:#d8b85b;}
-
-    @media(max-width:768px){
-      h1{font-size:34px;}
-
-      nav{
-        display:none;
-      }
-
-      .about,
-      .cards,
-      .team,
-      .contact{
-        grid-template-columns:1fr;
-      }
-
-      section{padding:55px 15px;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খিদমাতুল উম্মাহ ফাউন্ডেশন</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        header { background-color: #1b5e20; color: white; text-align: center; padding: 40px 20px; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .container { max-width: 800px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #1b5e20; border-bottom: 2px solid #1b5e20; padding-bottom: 8px; margin-top: 30px; margin-bottom: 20px; }
+        
+        /* ডোনেশন সেকশন */
+        .donation-box { text-align: center; background: #efebe9; padding: 25px; border-radius: 8px; border-left: 5px solid #d81b60; }
+        .bkash-btn { display: inline-block; background-color: #d81b60; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 30px; margin-top: 15px; transition: 0.3s; box-shadow: 0 4px 10px rgba(216,27,96,0.3); }
+        .bkash-btn:hover { background-color: #ad1457; transform: translateY(-2px); }
+        
+        /* সদস্য ফরম */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        .submit-btn { background-color: #1b5e20; color: white; border: none; padding: 12px 20px; font-size: 18px; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; }
+        .submit-btn:hover { background-color: #2e7d32; }
+        
+        /* ফেসবুক এবং সোশ্যাল সেকশন */
+        .fb-box { text-align: center; background: #e8f0fe; padding: 20px; border-radius: 8px; }
+        .fb-btn { display: inline-block; background-color: #1877f2; color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .fb-btn:hover { background-color: #166fe5; }
+        
+        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">
-      খিদমাতুল <span>উম্মাহ</span>
+    <header>
+        <h1>খিদমাতুল উম্মাহ ফাউন্ডেশন</h1>
+        <p>মানবতার সেবায় নিয়োজিত একটি অলাভজনক ও স্বেচ্ছাসেবী সংগঠন</p>
+    </header>
+
+    <div class="container">
+        <!-- সভাপতি ও পরিচিতি সেকশন (আপনার আগের তথ্য এখানে থাকবে) -->
+        <h2>ফাউন্ডেশন পরিচিতি</h2>
+        <p><strong>সভাপতি:</strong> [এখানে সভাপতির নাম লিখুন]</p>
+        <p>আমাদের ফাউন্ডেশন সমাজের সুবিধাবঞ্চিত ও অসহায় মানুষের পাশে দাঁড়াতে নিরলস কাজ করে যাচ্ছে।</p>
+
+        <!-- ডোনেশন সেকশন (সরাসরি বিকাশ) -->
+        <h2>সরাসরি ডোনেশন করুন</h2>
+        <div class="donation-box">
+            <p>আপনার দেওয়া অনুদান পৌঁছে যাবে অসহায় মানুষের কাছে। সরাসরি বিকাশ পার্সোনাল নাম্বারে ডোনেশন করতে নিচের বাটনে ক্লিক করুন।</p>
+            <!-- নিচের লিংকে আপনার নিজের বিকাশ পার্সোনাল নাম্বার এবং টাকার পরিমাণ বসাতে পারেন -->
+            <a href="https://bkash.com" target="_blank" class="bkash-btn">৳ সরাসরি বিকাশে ডোনেট করুন</a>
+            <p style="margin-top: 10px; font-size: 14px; color: #666;">(নোট: বিকাশ অ্যাপ ইনস্টল করা থাকলে সরাসরি পেমেন্ট স্ক্রিনে নিয়ে যাবে)</p>
+        </div>
+
+        <!-- সদস্য ফরম সেকশন -->
+        <h2>সদস্য নিবন্ধন ফরম</h2>
+        <form action="https://formspree.io" method="POST">
+            <div class="form-group">
+                <label for="name">আপনার নাম:</label>
+                <input type="text" id="name" name="name" required placeholder="সম্পূর্ণ নাম লিখুন">
+            </div>
+            <div class="form-group">
+                <label for="phone">মোবাইল নাম্বার:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="বিকাশ/যোগাযোগের নাম্বার">
+            </div>
+            <div class="form-group">
+                <label for="address">বর্তমান ঠিকানা:</label>
+                <textarea id="address" name="address" rows="3" required placeholder="আপনার ঠিকানা লিখুন"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">সদস্য পদের জন্য আবেদন করুন</button>
+        </form>
+
+        <!-- ফেসবুক পেজ সেকশন -->
+        <h2>আমাদের ফেসবুক পেজ</h2>
+        <div class="fb-box">
+            <p>আমাদের সব সর্বশেষ কার্যক্রম এবং আপডেট জানতে অফিসিয়াল ফেসবুক পেজে যুক্ত থাকুন।</p>
+            <!-- নিচের লিংকে আপনার ফেসবুক পেজের আসল লিংকটি বসিয়ে দিন -->
+            <a href="https://facebook.com" target="_blank" class="fb-btn">ফাউন্ডেশনের ফেসবুক পেজ ভিজিট করুন</a>
+        </div>
     </div>
 
-    <nav>
-      <a href="#home">হোম</a>
-      <a href="#about">আমাদের সম্পর্কে</a>
-      <a href="#activities">কার্যক্রম</a>
-      <a href="#team">কমিটি</a>
-      <a href="#donation">ডোনেশন</a>
-      <a href="#contact">যোগাযোগ</a>
-    </nav>
-  </div>
-</header>
+    <footer>
+        <p>&copy; 2026 খিদমাতুল উম্মাহ ফাউন্ডেশন। সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
 
-<section class="hero" id="home">
-  <div class="hero-content">
+</body>
+</html>
 
-    <div class="badge">Established 2026</div>
-
-    <h1>খিদমাতুল উম্মাহ ফাউন্ডেশন</h1>
-
-    <p>
-      মানবতার সেবায়, অসহায় মানুষের পাশে।
-      একটি সেবামূলক ও মানবিক সংগঠন।
-    </p>
-
-    <a href="#about" class="btn">আমাদের সম্পর্কে</a>
-    <a href="#donation" class="btn btn-outline">ডোনেশন করুন</a>
-
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-
-    <div class="title">
-      <h2>আমাদের সম্পর্কে</h2>
-      <div></div>
-    </div>
-
-    <div class="about">
-
-      <div class="card">
-        <h3>খিদমাতুল উম্মাহ ফাউন্ডেশন</h3>
-        <p>
-          খিদমাতুল উম্মাহ ফাউন্ডেশন একটি মানবিক ও সেবামূলক সংগঠন।
-          আমাদের লক্ষ্য সমাজের অসহায়, দরিদ্র ও সুবিধাবঞ্চিত মানুষের
-          পাশে দাঁড়ানো এবং মানবকল্যাণে কাজ করা।
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>আমাদের লক্ষ্য</h3>
-        <p>
-          মানুষের কল্যাণে কাজ করা, অসহায় মানুষের সহযোগিতা করা এবং
-          সমাজে সহানুভূতি, সহযোগিতা ও মানবিকতার পরিবেশ তৈরি করা।
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="activities">
-  <div class="container">
-
-    <div class="title">
-      <h2>আমাদের কার্যক্রম</h2>
-      <div></div>
-    </div>
-
-    <div class="cards">
-
-      <div class="card activity">
-        <div class="icon">🤝</div>
-        <h3>মানবিক সহায়তা</h3>
-        <p>অসহায় ও দরিদ্র মানুষের পাশে দাঁড়ানো।</p>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">📚</div>
-        <h3>শিক্ষা সহায়তা</h3>
-        <p>সুবিধাবঞ্চিত শিক্ষার্থীদের সহযোগিতা করা।</p>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🏥</div>
-        <h3>চিকিৎসা সহায়তা</h3>
-        <p>প্রয়োজনে অসহায় মানুষের চিকিৎসায় সহযোগিতা।</p>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🍚</div>
-        <h3>খাদ্য বিতরণ</h3>
-        <p>রমজানসহ বিভিন্ন সময়ে খাদ্য ও প্রয়োজনীয় সামগ্রী বিতরণ।</p>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🌧️</div>
-        <h3>দুর্যোগ সহায়তা</h3>
-        <p>প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্ত মানুষের পাশে দাঁড়ানো।</p>
-      </div>
-
-      <div class="card activity">
-        <div class="icon">🌱</div>
-        <h3>সামাজিক কার্যক্রম</h3>
-        <p>সমাজের কল্যাণে বিভিন্ন সামাজিক ও মানবিক উদ্যোগ।</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="team">
-  <div class="container">
-
+    .    </
     <div class="title">
       <h2>পরিচালনা কমিটি</h2>
       <div></div>

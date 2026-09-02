@@ -1,313 +1,521 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>খিদমাতুল উম্মাহ ফাউন্ডেশন</title>
 
-<title>হরিরামপুর খিদমাতুল উম্মাহ সমাজ কল্যাণ ফাউন্ডেশন</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
+    }
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    body {
+      background: #f5f7f6;
+      color: #222;
+      line-height: 1.7;
+    }
 
-body{
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-  background:#eef9fc;
-  color:#183247;
-  line-height:1.8;
-}
+    header {
+      background: #087f5b;
+      color: white;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.hero{
-  background:#062846;
-  color:white;
-  text-align:center;
-  padding:55px 20px;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo{
-  font-size:65px;
-  margin-bottom:10px;
-}
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-.hero h1{
-  font-size:30px;
-  margin-bottom:10px;
-}
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
 
-.hero p{
-  font-size:17px;
-  color:#aee4f5;
-}
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:25px 15px;
-}
+    .hero {
+      min-height: 80vh;
+      background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+      url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 30px;
+    }
 
-.card{
-  background:white;
-  margin:20px 0;
-  padding:30px 25px;
-  border-radius:22px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
 
-h2{
-  color:#062846;
-  text-align:center;
-  margin-bottom:20px;
-  font-size:27px;
-}
+    .hero p {
+      font-size: 20px;
+    }
 
-h2:after{
-  content:"";
-  display:block;
-  width:80px;
-  height:4px;
-  background:#75cde5;
-  margin:8px auto;
-  border-radius:5px;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #00a86b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-ul{
-  list-style:none;
-}
+    section {
+      padding: 60px 8%;
+    }
 
-li{
-  background:#f3fafc;
-  margin:10px 0;
-  padding:12px 15px;
-  border-radius:12px;
-  font-size:17px;
-}
+    .title {
+      text-align: center;
+      color: #087f5b;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
 
-li::before{
-  content:"✓";
-  color:#168b45;
-  font-weight:bold;
-  margin-right:10px;
-}
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
 
-.btn{
-  display:block;
-  text-decoration:none;
-  background:#062846;
-  color:white;
-  text-align:center;
-  padding:14px;
-  border-radius:35px;
-  margin:20px auto 5px;
-  max-width:330px;
-  font-size:18px;
-  font-weight:bold;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
 
-.btn:hover{
-  background:#0b426d;
-}
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
 
-.quote{
-  text-align:center;
-  font-size:20px;
-  font-style:italic;
-  color:#666;
-  margin:10px 0 20px;
-}
+    .card h3 {
+      color: #087f5b;
+      margin-bottom: 10px;
+    }
 
-.donation{
-  border-left:6px solid #75cde5;
-  padding:15px 20px;
-  background:#f7fcfd;
-  border-radius:10px;
-  font-size:18px;
-}
+    .leader {
+      border-top: 4px solid #087f5b;
+    }
 
-.values{
-  background:#062846;
-  color:white;
-}
+    .donation {
+      background: #e7f7f0;
+      text-align: center;
+    }
 
-.values h2{
-  color:#8bdaf0;
-}
+    .number {
+      font-size: 25px;
+      font-weight: bold;
+      color: #087f5b;
+      margin: 15px;
+    }
 
-.value{
-  background:#173d5d;
-  border:2px solid #78cde7;
-  padding:12px;
-  margin:12px 0;
-  text-align:center;
-  border-radius:15px;
-  font-size:18px;
-}
+    button {
+      border: none;
+      padding: 12px 22px;
+      background: #087f5b;
+      color: white;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-.contact{
-  background:#062846;
-  color:white;
-  text-align:center;
-  padding:40px 20px;
-}
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    }
 
-.contact h2{
-  color:white;
-}
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+    }
 
-.contact p{
-  margin:8px 0;
-  font-size:17px;
-}
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
 
-footer{
-  background:#031b2e;
-  color:#aaa;
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
 
-@media(max-width:600px){
-  .hero h1{
-    font-size:25px;
-  }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
 
-  .card{
-    padding:25px 18px;
-  }
-}
-</style>
+    th {
+      background: #087f5b;
+      color: white;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #075c43;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 18px;
+      border-radius: 7px;
+      background: white;
+      color: #087f5b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25D366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 25px;
+      z-index: 999;
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 45px 5%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- প্রধান অংশ -->
-<section class="hero">
-  <div class="logo">🤝</div>
+<header>
+  <nav>
+    <div class="logo">খিদমাতুল উম্মাহ ফাউন্ডেশন</div>
 
-  <h1>হরিরামপুর খিদমাতুল উম্মাহ</h1>
-  <h1>সমাজ কল্যাণ ফাউন্ডেশন</h1>
+    <ul>
+      <li><a href="#home">হোম</a></li>
+      <li><a href="#about">আমাদের সম্পর্কে</a></li>
+      <li><a href="#activities">কার্যক্রম</a></li>
+      <li><a href="#leaders">পরিচালনা কমিটি</a></li>
+      <li><a href="#donation">ডোনেশন</a></li>
+      <li><a href="#contact">যোগাযোগ</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <p>মানবতার কল্যাণে, মানুষের পাশে</p>
-</section>
-
-
-<div class="container">
-
-<!-- আমাদের সম্পর্কে -->
-<section class="card">
-  <h2>আমাদের সম্পর্কে</h2>
-
-  <p style="text-align:center;">
-    হরিরামপুর খিদমাতুল উম্মাহ সমাজ কল্যাণ ফাউন্ডেশন
-    একটি মানবিক ও সমাজকল্যাণমূলক উদ্যোগ।
-    অসহায়, দরিদ্র ও সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানো
-    এবং সমাজের কল্যাণে কাজ করাই আমাদের লক্ষ্য।
-  </p>
-</section>
-
-
-<!-- কার্যক্রম -->
-<section class="card">
-  <h2>আমাদের কার্যক্রম</h2>
-
-  <ul>
-    <li>শিক্ষা সহায়তা</li>
-    <li>এতিম ও পথশিশুদের সহায়তা</li>
-    <li>চিকিৎসা সহায়তা</li>
-    <li>খাদ্য ও বস্ত্র বিতরণ</li>
-    <li>দুর্যোগকালীন ত্রাণ</li>
-    <li>অসহায় মানুষের পাশে দাঁড়ানো</li>
-  </ul>
-</section>
-
-
-<!-- সদস্য -->
-<section class="card">
-  <h2>সদস্য হওয়ার শর্তাবলি</h2>
-
-  <ul>
-    <li>সংগঠনের উদ্দেশ্য ও আদর্শের সঙ্গে একাত্মতা</li>
-    <li>সমাজকল্যাণমূলক কাজে সম্পৃক্ত থাকা</li>
-    <li>রাজনৈতিক ইস্যুতে সংগঠন ব্যবহার না করা</li>
-    <li>অর্পিত দায়িত্ব যথাযথভাবে পালন করা</li>
-    <li>সংগঠনের নিয়মনীতি মেনে চলা</li>
-  </ul>
-
-  <!-- এখানে Google Form-এর লিংক বসাবে -->
-  <a class="btn"
-     href="GOOGLE_FORM_LINK_HERE"
-     target="_blank">
-     📄 অনলাইন সদস্য ফর্ম
-  </a>
-</section>
-
-
-<!-- দান -->
-<section class="card">
-  <h2>স্থানীয় কার্যক্রমে দান</h2>
-
-  <div class="quote">
-    “আপনার দান বদলে দিতে পারে একটি জীবন, একটি ভবিষ্যৎ”
-  </div>
-
-  <h3>খাতসমূহ:</h3>
-
-  <ul>
-    <li>শিক্ষা সহায়তা</li>
-    <li>এতিম ও পথশিশু</li>
-    <li>চিকিৎসা সহায়তা</li>
-    <li>খাদ্য ও বস্ত্র বিতরণ</li>
-    <li>দুর্যোগকালীন ত্রাণ</li>
-  </ul>
-
-  <div class="donation">
-    <b>দান মাধ্যম:</b><br><br>
-
-    বিকাশ / নগদ: <b>আপনার নম্বর</b><br>
-
-    ব্যাংক: শীঘ্রই যোগ করা হবে
+<!-- Home -->
+<section class="hero" id="home">
+  <div>
+    <h1>খিদমাতুল উম্মাহ ফাউন্ডেশন</h1>
+    <p>মানবতার সেবায়, মানুষের পাশে</p>
+    <p>প্রতিষ্ঠিত: ২০২৬</p>
+    <a href="#donation" class="btn">সহযোগিতা করুন</a>
   </div>
 </section>
 
+<!-- About -->
+<section id="about">
+  <h2 class="title">আমাদের সম্পর্কে</h2>
 
-<!-- মূল্যবোধ -->
-<section class="card values">
-  <h2>মূল্যবোধ</h2>
+  <div class="about">
+    <p>
+      <strong>খিদমাতুল উম্মাহ ফাউন্ডেশন</strong> একটি সেবামূলক ও
+      মানবিক সংগঠন। আমাদের মূল লক্ষ্য হলো অসহায়, দরিদ্র ও
+      সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানো এবং মানব কল্যাণে কাজ করা।
+    </p>
 
-  <div class="value">মানবিকতা</div>
-  <div class="value">সদাচার ও সততা</div>
-  <div class="value">সহানুভূতি</div>
-  <div class="value">ন্যায়পরায়ণতা</div>
-  <div class="value">দায়িত্বশীলতা</div>
-  <div class="value">সমাজমুখী দৃষ্টি</div>
-  <div class="value">সহযোগিতা ও একতা</div>
+    <br>
+
+    <p>
+      সমাজের মানুষের মধ্যে সহানুভূতি, সহযোগিতা ও মানবিক মূল্যবোধ
+      গড়ে তোলাই আমাদের অন্যতম উদ্দেশ্য।
+    </p>
+  </div>
 </section>
 
-</div>
+<!-- Goals -->
+<section>
+  <h2 class="title">আমাদের লক্ষ্য ও উদ্দেশ্য</h2>
 
+  <div class="cards">
+    <div class="card">
+      <h3>🤝 মানব কল্যাণ</h3>
+      <p>অসহায় ও সুবিধাবঞ্চিত মানুষের পাশে দাঁড়ানো।</p>
+    </div>
 
-<!-- যোগাযোগ -->
-<section class="contact">
+    <div class="card">
+      <h3>📚 শিক্ষা সহায়তা</h3>
+      <p>দরিদ্র ও মেধাবী শিক্ষার্থীদের সহযোগিতা করা।</p>
+    </div>
 
-  <h2>যোগাযোগ</h2>
+    <div class="card">
+      <h3>🏥 চিকিৎসা সহায়তা</h3>
+      <p>অসহায় মানুষের চিকিৎসা সহায়তায় এগিয়ে আসা।</p>
+    </div>
 
-  <p>📍 হরিরামপুর, ঢাকা, বাংলাদেশ</p>
-
-  <p>📞 মোবাইল: আপনার মোবাইল নম্বর</p>
-
-  <p>✉️ Email: আপনার Gmail</p>
-
-  <p>Facebook: Horirampur Khidmatul Ummah Foundation</p>
-
+    <div class="card">
+      <h3>🌍 দুর্যোগ সহায়তা</h3>
+      <p>প্রাকৃতিক দুর্যোগে ক্ষতিগ্রস্ত মানুষের পাশে থাকা।</p>
+    </div>
+  </div>
 </section>
 
+<!-- Activities -->
+<section id="activities">
+  <h2 class="title">আমাদের কার্যক্রম</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🍚 খাদ্য বিতরণ</h3>
+      <p>অসহায় মানুষের মাঝে খাবার বিতরণ।</p>
+    </div>
+
+    <div class="card">
+      <h3>🎒 শিক্ষা সহায়তা</h3>
+      <p>প্রয়োজনীয় শিক্ষা উপকরণ ও সহযোগিতা প্রদান।</p>
+    </div>
+
+    <div class="card">
+      <h3>🩺 চিকিৎসা সহায়তা</h3>
+      <p>অসহায় মানুষের চিকিৎসায় সহযোগিতা।</p>
+    </div>
+
+    <div class="card">
+      <h3>🕌 সামাজিক ও ধর্মীয় কার্যক্রম</h3>
+      <p>বিভিন্ন সামাজিক ও ধর্মীয় কার্যক্রম পরিচালনা।</p>
+    </div>
+  </div>
+</section>
+
+<!-- Leaders -->
+<section id="leaders">
+  <h2 class="title">পরিচালনা কমিটি</h2>
+
+  <div class="cards">
+
+    <div class="card leader">
+      <h3>প্রতিষ্ঠাতা</h3>
+      <p>মোঃ শাকিল মাহমুদ</p>
+      <p>মোঃ রাকিবুল ইসলাম</p>
+    </div>
+
+    <div class="card leader">
+      <h3>সভাপতি</h3>
+      <p>এইচ এম আরমান আলী খান</p>
+    </div>
+
+    <div class="card leader">
+      <h3>সহ-সভাপতি</h3>
+      <p>মুসলিম উদ্দিন</p>
+    </div>
+
+    <div class="card leader">
+      <h3>সাধারণ সম্পাদক</h3>
+      <p>শাকিল মাহমুদ</p>
+    </div>
+
+    <div class="card leader">
+      <h3>সাংগঠনিক সম্পাদক</h3>
+      <p>রাকিবুল ইসলাম</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Donation -->
+<section class="donation" id="donation">
+  <h2 class="title">ডোনেশন করুন</h2>
+
+  <p>আপনার সামান্য সহযোগিতাও একজন মানুষের জীবনে বড় পরিবর্তন আনতে পারে।</p>
+
+  <div class="number" id="bkash">
+    বিকাশ: +880 1882-751524
+  </div>
+
+  <button onclick="copyNumber()">নম্বর কপি করুন</button>
+</section>
+
+<!-- Member -->
+<section>
+  <h2 class="title">সদস্য হওয়ার আবেদন</h2>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="আপনার নাম" required>
+    <input type="tel" placeholder="মোবাইল নম্বর" required>
+    <input type="text" placeholder="ঠিকানা" required>
+    <textarea placeholder="আপনার সম্পর্কে লিখুন"></textarea>
+
+    <button type="submit">আবেদন করুন</button>
+  </form>
+</section>
+
+<!-- Volunteer -->
+<section>
+  <h2 class="title">স্বেচ্ছাসেবক হতে চান?</h2>
+
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="আপনার নাম" required>
+    <input type="tel" placeholder="মোবাইল নম্বর" required>
+    <textarea placeholder="কেন স্বেচ্ছাসেবক হতে চান?"></textarea>
+
+    <button type="submit">আবেদন করুন</button>
+  </form>
+</section>
+
+<!-- Income Expense -->
+<section>
+  <h2 class="title">আয়-ব্যয়ের হিসাব</h2>
+
+  <table>
+    <tr>
+      <th>তারিখ</th>
+      <th>বিবরণ</th>
+      <th>আয়</th>
+      <th>ব্যয়</th>
+    </tr>
+
+    <tr>
+      <td>--</td>
+      <td>তথ্য আপডেট করা হবে</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+  </table>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2 class="title">যোগাযোগ</h2>
+
+  <div class="contact-box">
+
+    <p>📞 ফোন: <a href="tel:+8801882751524">+880 1882-751524</a></p>
+
+    <p>
+      📍 ঠিকানা: মৌলভীবাজার, পার্বতীপুর, দিনাজপুর
+    </p>
+
+    <div class="social">
+
+      <a href="https://www.facebook.com/khidmatul.ummah24"
+         target="_blank">
+        Facebook Page
+      </a>
+
+      <a href="https://wa.me/8801882751524"
+         target="_blank">
+        WhatsApp
+      </a>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Moulvibazar%2C%20Parbatipur%2C%20Dinajpur"
+         target="_blank">
+        Google Maps
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 <footer>
-© 2026 হরিরামপুর খিদমাতুল উম্মাহ সমাজ কল্যাণ ফাউন্ডেশন
+  <p>© ২০২৬ খিদমাতুল উম্মাহ ফাউন্ডেশন</p>
+  <p>মানবতার সেবায় আমরা অঙ্গীকারবদ্ধ</p>
 </footer>
 
+<a class="whatsapp"
+   href="https://wa.me/8801882751524"
+   target="_blank">
+  ☎
+</a>
+
+<script>
+
+function copyNumber() {
+  navigator.clipboard.writeText("+8801882751524");
+  alert("বিকাশ নম্বর কপি হয়েছে!");
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  alert("আপনার আবেদন গ্রহণ করা হয়েছে। ধন্যবাদ!");
+}
+
+</script>
+
 </body>
-  </html>
+</html>
